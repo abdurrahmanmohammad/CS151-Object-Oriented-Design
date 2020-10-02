@@ -1,0 +1,153 @@
+	/**
+	 * Constructs a new Day object if the date is valid
+	 * 
+	 * @param year  an integer specifying the year
+	 * @param month an integer specifying the month
+	 * @param day   an integer specifying the day
+	 * 
+	 * @precondition The year must not be 0
+	 * @precondition The month should be between 1 and 12 (corresponding to Jan - Dec)
+	 * @precondition The day should in range of its month (28, 29, 30, or 31 depending on the month)
+	 * @precondition February 29 can only be created on a leap year (leap year calculated according to the year and type of calendar)
+	 * @precondition You cannot have a date after 10/4/1582 AND before 10/15/1582 exclusive.
+	 * @postcondition none
+	 */
+	public Day(int year, int month, int day) {
+		assert !(year == 0) : "The year cannot be 0";
+		assert checkMonth(month) : "The month should be between 1 and 12 (corresponding to Jan - Dec)";
+		assert checkDay(year, month, day) : "The day is out of range of its month";
+		assert !(!isLeapYear(year) && month == 2 && day > 28) : "The date is Feb 29 on non leap year";
+		assert !(year == 1582 && month == 10 && (day > 4
+				&& day < 15)) : "The date is between 10/4/1582 and 10/15/1582. Invalid date for the Gregorian calendar";
+	}
+	
+	
+	
+	/**
+	 * Calculates the difference between two dates
+	 * 
+	 * @param aDay is another date object with a valid date
+	 * @return the difference between current date and another date
+	 * @precondition none
+	 * @postcondition none
+	 */
+	public int daysFrom(Day aDay) {}
+	
+	
+	
+	/**
+	 * Returns the date after addX days from current date
+	 * 
+	 * @param addX is the number of days after or before this day
+	 * @return the Day object with the date addX days from this date
+	 * @precondition none
+	 * @postcondition returns a valid date object
+	 */
+	public Day addDays(int addX) {}
+	
+	
+	
+	/**
+	 * Converts a date into its corresponding number of days
+	 * 
+	 * @param aDay is the date as a Day object (aDay can never be invalid)
+	 * @return the date converted into its number of days
+	 * @precondition none
+	 * @postcondition none
+	 */
+	private int convertToDays(Day aDay) {}
+	
+	
+	
+	/**
+	 * Method to check if the month is valid. Helper method.
+	 * 
+	 * @param aMonth the month of the date to check
+	 * @return a boolean value stating if the month is a valid month
+	 * @precondition none
+	 * @postcondition none
+	 */
+	private boolean checkMonth(int aMonth) {}
+	
+	
+	
+	/**
+	 * Method to check if the chosen day is valid. Helper method.
+	 * 
+	 * @param aMonth the month of the day
+	 * @param aDay   the day to be checked
+	 * @return a boolean value stating if the month is a valid month
+	 * @precondition none
+	 * @postcondition none
+	 */
+	private boolean checkDay(int year, int aMonth, int aDay) {}
+	
+	
+	
+	/**
+	 * Method to determine if a year is a leap year. Helper method.
+	 * 
+	 * @param aYear is the year to check to see if it is a leap year
+	 * @return a boolean value stating if the year is a leap year
+	 * @precondition none
+	 * @postcondition none
+	 */
+	private boolean isLeapYear(int aYear) {}
+	
+	
+	
+	/**
+	 * Returns the year, month, day as a string: month day, year
+	 * @return the date as a string
+	 * @precondition none
+	 * @postcondition none
+	 */
+	public String getDate() {
+		return (monthNames[month - 1] + " " + day + ", " + year);
+	}
+
+
+
+	/**
+	 * Returns the month of the date
+	 * 
+	 * @return the month of the date
+	 * @precondition none
+	 * @postcondition none
+	 */
+	public int getMonth() {
+		return month;
+	}
+
+
+
+	/**
+	 * Returns the day of the date
+	 * 
+	 * @return the day of the date
+	 * @precondition none
+	 * @postcondition none
+	 */
+	public int getDay() {
+		return day;
+	}
+
+
+
+	/**
+	 * Returns the year of the date
+	 * 
+	 * @return the year of the date
+	 * @precondition none
+	 * @postcondition none
+	 */
+	public int getYear() {
+		return year;
+	}
+	
+	
+	
+	
+	
+		
+	
